@@ -48,8 +48,8 @@ def add(request):
         desc = request.POST.get('adding')
         vals = dict(request.POST)['ing_val']
         form = UserImageForm(request.POST, request.FILES)
-        if Recipe.objects.get(title=ttle):
-            raise Exception("Recipe with this title already Exists")
+        # if Recipe.objects.get(title=ttle):
+        #     raise Exception("Recipe with this title already Exists")
 
         try:
             if ttle == "" or desc == "" or len(vals) == 0:
