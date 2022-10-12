@@ -1,0 +1,31 @@
+{% extends 'polls/base.html' %} {% block content %} {% load static %}
+
+<div class="col-lg-12 desc-box">
+  <div class="desc-title">
+    <img src="{{ recipe.image.url }}" alt="" srcset="" class="desc-img" />
+    <h4>{{ recipe.title }}</h4>
+    {% if recipe.user.username == user.username %}
+      <a href="{% url 'Edit' recipe.title %}">Edit Recipe</a> 
+    {% endif %}
+  </div>
+
+  <div class="desc-end">
+    <h4>How to make--</h4>
+    <p>{{ recipe.description }}</p>
+  </div>
+  <h4>Ingredients</h4>
+  <div class="desc-mid">
+    <ul>
+      <div class="ing-items">
+        {% for ingredient in ingredients %}
+        <li class="ing-spacing">
+          <img src="{{ ingredient.image.url }}" style="width: 2rem; height: 2rem" alt="" />
+          <p>{{ ingredient.name }}</p>
+        </li>
+        {% endfor %}
+      </div>
+    </ul>
+  </div>
+</div>
+
+{% endblock content %}

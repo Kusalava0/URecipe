@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="ing-title">Please Upload ingredient images...</div>
+<div class="row">
+
+    <form action="/images/" method="post" class="add-form" enctype="multipart/form-data">
+        {% for ingredient in ingredients %}
+            {% csrf_token %}
+            <div class="col-lg-6 ing-img">
+                <p> {{ ingredient.name }} </p>
+            </div>
+            <div class="col-lg-6 upload-ing">
+                {{ form.as_p }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="registerbtn">submit</button>
+    </form>
+</div>
+
+{% endblock content %}

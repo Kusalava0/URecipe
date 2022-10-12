@@ -1,0 +1,65 @@
+<nav class="nav-bar navbar sticky-top">
+  {% load static %}
+  <input type="checkbox" id="check" />
+  <label for="check">
+    <i class="mob-menu"><img src="{% static 'polls/images/menu-regular-24.png' %}" class="menu" /></i>
+    <!-- <i class="cancel"><img src="images/x-regular-24.png" class="menu-cancel"></i> -->
+  </label>
+  <div class="sidebar">
+    <!-- navbar sticky-top -->
+    <header>Manage</header>
+    <ul>
+      <li class="mob-items">
+        <a href="/add/"><img src="{% static 'polls/images/bx-plus-circle.svg' %}" alt="+" class="mob-add" />
+          Add Recipe</a>
+      </li>
+      <li class="mob-items">
+        <a href="/My_recipes"><i><img src="{% static 'polls/images/user_web-1598433228.svg' %}" class="mob-drop" /></i>
+          Account</a>
+      </li>
+    </ul>
+  </div>
+  <a href="/home/" class="logo">URecipe</a>
+  <div>
+    <form action="/home/" method="post">
+      {% csrf_token %}
+      <input type="search" placeholder="Search by Ingredient.." class="searchbar" name="search" required />
+      <button class="search">
+        <img src="{% static 'polls/images/search-regular-24.png' %}" />
+      </button>
+    </form>
+  </div>
+
+  <div>
+    <a href="/add/"><img src="{% static 'polls/images/bx-plus-circle.svg' %}" alt="+" class="add" /></a>
+  </div>
+
+  <div class="dropdown show">
+    <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <img src="{% static 'polls/images/user_web-1598433228.svg' %}" alt="" srcset="" />
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      {% if not user.is_authenticated %}
+      <a class="dropdown-item" href="/register/">Register</a>
+      <a class="dropdown-item" href="/login/">Login</a>
+      {% else %}
+      <a class="dropdown-item" href="{% url 'myrecipe' %}">View URecipes</a>
+      <a class="dropdown-item" href="/logout/">logout</a>
+      {% endif %}
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="check-search" />
+    <label for="check-search">
+      <i class="search-icon"><img src="{% static 'polls/images/search-regular-24.png' %}" class="menu-img" /></i>
+    </label>
+    <div class="sml-search">
+      <form action="/home/" method="post">
+        {% csrf_token %}
+        <input type="search" placeholder="Search by Ingredient.." class="mob-search" name="search" required />
+      </form>
+    </div>
+  </div>
+</nav>

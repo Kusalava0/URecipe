@@ -1,0 +1,59 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="row">
+    {% load static %}
+
+    <!-- <div class="col-lg-8"> -->
+    <form action="{% url 'Edit' recipe.title %}" method="post" class="add-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Edit URecipe</h1>
+        <div class="add-form-head col-lg-12">
+            <label for="dish-image">Change Picture</label>
+                {{ form.as_p }}
+            {% comment %} <input type="file" name="recipe-image" id="dish-image" > {% endcomment %}
+            <input type="text" class="recipe-title" name="title" value="{{ recipe.title }}">
+            <br>
+            <!-- <p><label for="adding">Mention the steps required for making the dish below</label></p> -->
+            <textarea name="adding" id="add-recipe" rows="10" cols="100">{{ recipe.description }}</textarea>
+        </div>
+
+        <br>
+        <div class="add-form-mid">
+            <label for="ingredient-img">Ingredients</label>
+            <a id="Add">Add Ingredient</a> <a id="Remove">Remove Ingredient</a>
+            <script>$("#button").on("click", function () { $("body").scrollTop(0); });</script>
+            <div id="textboxDiv">
+                {% for val in recipe.ingredient.all %}
+                <div><br><input type='text' name='ing_val' class='recipe-title' value={{ val.name }}><br></div>
+                {% endfor %}
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $("#Add").on("click", function () {
+                        $("#textboxDiv").append("<div><br><input type='text' name='ing_val' class='recipe-title'/><br></div>");
+                    });
+                    $("#Remove").on("click", function () {
+                        $("#textboxDiv").children().last().remove();
+                    });
+                });  
+            </script>
+
+
+            <!-- <input type="file" name="ingredient" id="ingredient-img" multiple> -->
+        </div>
+
+        <div class="add-form-foot">
+
+            <button type="submit"><img src="{% static 'polls/images/submit-edit.webp' %}" alt=""
+                    class="add-img">Submit</button>
+        </div>
+    </form>
+    <!-- </div> -->
+
+</div>
+{% endif %}
+
+{% endblock content %}

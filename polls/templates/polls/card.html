@@ -1,0 +1,52 @@
+<section class="white-section">
+  {% load static %}
+  <h2 class="section-heading">{{ heading_card }} <img src="{% static 'polls/images/below.webp' %}"
+      style="width: 1rem; height: 1rem" alt="" /></h2>
+
+  <div class="row">
+    {% for recipe in recipes %} 
+    <div class="recipe-column col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <img src="{{ recipe.image.url }}" alt="" />
+          <h3>{{ recipe.title }}</h3>
+        </div>
+        <div class="card-body">
+          <h2 class="price-text">Ingredients</h2>
+          <ul class="ingredients">
+            <section class="list-ing">
+              <div class="list-items">
+                {% for val in recipe.ingredient.all %}
+                {% if forloop.counter <= 3 %} <li>
+                  <img src="{{ val.image.url }}" style="width: 2rem; height: 2rem"
+                    alt="" />
+                  <p>{{ val.name }}</p>
+                  </li>
+                  {% endif %}
+                  {% endfor %}
+              </div>
+              <div class="list-items">
+                {% for val in recipe.ingredient.all %} {% if forloop.counter > 3 and forloop.counter <= 6 %} <li>
+                  {% if forloop.counter == 6 %}
+                  <img src="{% static 'polls/images/more.png' %}" style="width: 2rem; height: 2rem" alt="" />
+                  <p>more..</p>
+                  {% else %}
+                  <img src="{{ val.image.url }}" style="width: 2rem; height: 2rem"
+                    alt="" />
+                  <p>{{ val.name }}</p>
+                  {% endif %}
+                  </li>
+                  {% endif %} {% endfor %}
+              </div>
+            </section>
+          </ul>
+          <!-- {{ recipe.title }} -->
+          <a class="btn btn-lg btn-block btn-dark" href="{% url 'description' recipe.title %}">
+            View Recipe
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
