@@ -480,6 +480,12 @@ section .list-ing .list-items {
         font-size: 1rem;
     }
 
+    #email,
+    #psw,
+    #profile-name {
+        margin-right: 2rem;
+    }
+
 }
 
 @media (max-width: 400px) {
