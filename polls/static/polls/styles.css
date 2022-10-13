@@ -480,6 +480,12 @@ section .list-ing .list-items {
         height: 5rem;
         font-size: 1rem;
     }
+    .add-form-mid div{
+        display: flex;
+    }
+    .add-form-mid div label{
+        margin-left: 1rem ;
+    }
 
     /* #email,
     #psw,
