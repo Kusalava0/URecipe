@@ -337,15 +337,15 @@ li:hover {
     /* background: #f0e5db; */
 }
 
-/* .card-body {
-    background: #f0e5db;
-} */
+.card-body h2 {
+    text-align: center;
+}
 
 
 
 
 .card-header {
-    /* margin: auto; */
+    margin: auto;
     display: flex;
     /* background-color: #f0e5db; */
     background-color: rgba(0, 0, 0, 0);
@@ -395,7 +395,7 @@ li:hover {
     display: flex;
     text-align: center;
     padding: 1rem;
-    margin: 1rem;
+    margin: auto;
     cursor: pointer;
 }
 
@@ -474,6 +474,28 @@ section .list-ing .list-items {
     }
 }
 
+@media (max-width: 544px) {
+    .card-header {
+        height: 5rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .card-header h3 {
+        font-size: medium;
+    }
+
+    .card-header img {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    section .list-1 {
+        display: none;
+    }
+}
 
 .btn-dark {
     color: #fff;

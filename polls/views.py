@@ -181,3 +181,7 @@ def user_logout(request):
     else:
         context['error'] = "Login to continue"
         return redirect('/login/')
+
+def rndm(request,nme):
+    return redirect('/home/')
+    

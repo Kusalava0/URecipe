@@ -14,8 +14,16 @@
           Add Recipe</a>
       </li>
       <li class="mob-items">
-        <a href="/My_recipes"><i><img src="{% static 'polls/images/user_web-1598433228.svg' %}" class="mob-drop" /></i>
-          Account</a>
+        {% if not user.is_authenticated %}
+        <a href="/login/"><i><img src="{% static 'polls/images/user_web-1598433228.svg' %}" class="mob-drop" /></i>
+          login</a>
+        {% else %}
+        <a href="{% url 'myrecipe' %}"><i><img src="{% static 'polls/images/user_web-1598433228.svg' %}"
+              class="mob-drop" /></i>
+          View URecipes</a>
+        <a href="/logout/"><i><img src="{% static 'polls/images/user_web-1598433228.svg' %}" class="mob-drop" /></i>
+          logout</a>
+        {% endif %}
       </li>
     </ul>
   </div>

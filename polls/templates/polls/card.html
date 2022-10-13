@@ -15,7 +15,7 @@
           <h2 class="price-text">Ingredients</h2>
           <ul class="ingredients">
             <section class="list-ing">
-              <div class="list-items">
+              <div class="list-items list-1">
                 {% for val in recipe.ingredient.all %}
                 {% if forloop.counter <= 3 %} <li>
                   <img src="{{ val.image.url }}" style="width: 2rem; height: 2rem"
