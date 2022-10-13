@@ -12,8 +12,8 @@
         <h1>Edit URecipe</h1>
         <div class="add-form-head col-lg-12">
             <label for="dish-image">Change Picture</label>
-                {{ form.as_p }}
-            {% comment %} <input type="file" name="recipe-image" id="dish-image" > {% endcomment %}
+            {{ form.as_p }}
+            {% comment %} <input type="file" name="recipe-image" id="dish-image"> {% endcomment %}
             <input type="text" class="recipe-title" name="title" value="{{ recipe.title }}">
             <br>
             <!-- <p><label for="adding">Mention the steps required for making the dish below</label></p> -->
@@ -22,8 +22,11 @@
 
         <br>
         <div class="add-form-mid">
-            <label for="ingredient-img">Ingredients</label>
-            <a id="Add">Add Ingredient</a> <a id="Remove">Remove Ingredient</a>
+            <div>
+                <label for="ingredient-img">Ingredients</label>
+                <a id="Add">Add Ingredient</a>
+                <a id="Remove">Remove Ingredient</a>
+            </div>
             <script>$("#button").on("click", function () { $("body").scrollTop(0); });</script>
             <div id="textboxDiv">
                 {% for val in recipe.ingredient.all %}

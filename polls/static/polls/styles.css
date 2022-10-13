@@ -480,11 +480,23 @@ section .list-ing .list-items {
         height: 5rem;
         font-size: 1rem;
     }
-    .add-form-mid div{
+
+    .add-form-mid div {
         display: flex;
     }
-    .add-form-mid div label{
-        margin-left: 1rem ;
+
+    .add-form-mid div label {
+        margin-left: 1rem;
+    }
+
+    .add-form-mid #textboxDiv {
+        display: block;
+        align-items: center;
+    }
+
+    #textboxDiv .recipe-title {
+        margin: auto;
+        margin-bottom: 2rem;
     }
 
     /* #email,
@@ -561,6 +573,10 @@ section .list-ing .list-items {
     background-color: #BDD2B6;
 }
 
+.add-form-head label p #id_image {
+    font-size: 0.75rem;
+}
+
 .recipe-title {
     width: 20rem;
     height: 3rem;
@@ -573,6 +589,7 @@ section .list-ing .list-items {
 textarea {
     resize: horizontal;
     background-color: #e3e1df;
+    max-width: 95%;
 }
 
 .add-form label {
