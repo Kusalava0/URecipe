@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>URecipe</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'polls/images/favicon.png' %}">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -24,11 +26,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body> 
+<body>
     {% include 'polls/navbar.html'%}
 
     {% block content %}
-        <!-- content -->
+    <!-- content -->
     {% endblock %}
 </body>
 
