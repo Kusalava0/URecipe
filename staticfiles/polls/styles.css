@@ -300,6 +300,7 @@ li:hover {
         flex: 2;
         text-align: center;
     }
+
 }
 
 @media (max-width: 1140px) {
@@ -480,6 +481,12 @@ section .list-ing .list-items {
         font-size: 1rem;
     }
 
+    /* #email,
+    #psw,
+    #profile-name {
+        margin-right: 4rem;
+    } */
+
 }
 
 @media (max-width: 400px) {
@@ -532,7 +539,7 @@ section .list-ing .list-items {
 }
 
 .add-form button,
-.add-form-mid button,
+.add-form-mid a,
 .registerbtn {
     margin: 1rem;
     padding: 1rem;
@@ -543,7 +550,7 @@ section .list-ing .list-items {
 }
 
 .add-form button:hover,
-.add-form-mid button:hover,
+.add-form-mid a,
 .registerbtn:hover {
     background-color: #BDD2B6;
 }
@@ -603,6 +610,29 @@ textarea {
 
 hr {
     margin: 2rem;
+}
+
+.mob-br {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .mob-br {
+        display: inline;
+    }
+
+    .add-form-mid label,
+    .add-form-mid a {
+        font-size: 1rem;
+        padding: 0rem;
+        margin: 0rem;
+        /* height: 9rem; */
+        /* display: inline; */
+    }
+
+    .add-form-mid textarea {
+        columns: 30;
+    }
 }
 
 #email,
