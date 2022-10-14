@@ -344,7 +344,6 @@ li:hover {
 
 
 
-
 .card-header {
     margin: auto;
     display: flex;
@@ -398,14 +397,20 @@ li:hover {
     padding: 1rem;
     margin: auto;
     cursor: pointer;
+    margin-left: 2rem;
 }
 
 .list-ing {
     width: 100%;
 }
 
-section .list-ing .list-items {
+section .list-ing .list-items li {
     text-align: center;
+    margin-right: 4rem
+}
+
+section .list-ing {
+    margin-left: 2rem;
 }
 
 .card-body .list-ing li {
@@ -416,6 +421,14 @@ section .list-ing .list-items {
     border-radius: 20%;
 }
 
+@media (max-width: 1750px) {
+    section .list-ing .list-items li {
+        text-align: center;
+        margin-right: 2rem
+    }
+
+}
+
 @media (max-width: 1680px) {
     .card-body .list-ing li {
         text-align: center;
@@ -424,16 +437,24 @@ section .list-ing .list-items {
         padding: 0rem 0rem;
         border-radius: 20%;
     }
-
 }
 
 @media (max-width: 1520px) {
-    .card-header h3 {
+    /* .card-header h3 {
         font-size: 1.25rem;
-    }
+    } */
 
     .card-header h4 {
         font-size: 1rem;
+    }
+
+    section .list-ing .list-items li {
+        text-align: center;
+        margin-right: 1.25rem
+    }
+
+    section .list-ing {
+        margin-left: 2rem;
     }
 
 }
@@ -449,6 +470,7 @@ section .list-ing .list-items {
 
     .card-header h3 {
         font-size: 1.25rem;
+        font-weight: bold;
     }
 
     .ingredients {
@@ -459,12 +481,32 @@ section .list-ing .list-items {
         height: 6rem;
         width: 6rem;
     }
+
+    .card-body h2 {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    section .list-ing {
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 1140px) {
     .card-body .list-ing li {
         margin: 0rem 0.1rem 0rem 0rem;
         font-size: small;
+    }
+
+    .ingredients {
+        height: 60%;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 990px) {
+    .ingredients {
+        margin-left: 4rem;
     }
 }
 
@@ -499,11 +541,18 @@ section .list-ing .list-items {
         margin-bottom: 2rem;
     }
 
-    /* #email,
-    #psw,
-    #profile-name {
-        margin-right: 4rem;
-    } */
+    .card-body {
+        padding-top: 3rem;
+    }
+
+    section .list-ing .list-items li {
+        text-align: center;
+        margin-left: 1.25rem;
+    }
+
+    .ingredients {
+        margin: 0rem;
+    }
 
 }
 
@@ -520,6 +569,8 @@ section .list-ing .list-items {
     section .list-1 {
         display: none;
     }
+
+
 }
 
 .btn-dark {
